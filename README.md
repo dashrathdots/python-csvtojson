@@ -108,3 +108,9 @@ python manage.py test
   - Post action actions/checkout@v2
   - Complete job
 
+
+## Third party library for UI
+  - Bootstrap 4.5.2
+  - Jquery 3.5.1
+
+
