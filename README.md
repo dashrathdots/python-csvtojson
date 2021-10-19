@@ -1,6 +1,10 @@
 # csv-to-json
 Convert Csv to Json
 
+### Pre requisites
+- `git` protocol client installed
+- Repository management client like `SourceTree` or something that helps in the `git` workflow
+- Docker desktop
 
 ### Project checkout flow
 Clone the entire repository on your local machine using the command
@@ -48,3 +52,23 @@ Once you upload the file, system will parse it and JSON file will be downloaded 
 
 ## Run Unit Test Case
 python manage.py test
+
+
+## Run the project with Docker
+  - Build the `development` version server docker image and run it using the following command
+    ```
+      sudo docker-compose -f docker-compose.yml up
+    ```
+  - In order to see the start up logs execute the following command
+    ```
+      sudo docker-compose -f docker-compose.yml logs -f
+    ```
+  - In order to get the server docker image details, execute the following command
+    ```
+    sudo docker ps
+    ```
+
+  - The development docker image runs the django application using `python manage.py runserver`. So any change made in the project will auto redeploy it in the running docker image
+
+## Run Unit Test Case inside the docker
+  - sudo docker-compose -f docker-compose.yml exec csvtojson python manage.py test
