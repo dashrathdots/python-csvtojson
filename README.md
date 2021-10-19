@@ -72,3 +72,23 @@ python manage.py test
 
 ## Run Unit Test Case inside the docker
   - sudo docker-compose -f docker-compose.yml exec csvtojson python manage.py test
+
+
+## CI/CD with Github and Heroku
+
+  - Setup up work flow from github action
+    https://github.com/dashrathdots/python-csvtojson/actions/new
+    It will automatic create .yml file where we need to update server related configurations
+
+  - Go to the heroku cloud (https://dashboard.heroku.com/)
+    - Create new app (https://dashboard.heroku.com/apps) python-csvtojson
+    - Generate new API Key (https://dashboard.heroku.com/account)
+
+  - Go to the Github repository
+    - Go to the setting (https://github.com/dashrathdots/python-csvtojson/settings)
+    - Add new secret (https://github.com/dashrathdots/python-csvtojson/settings/secrets/actions/new)
+      - HEROKU_API_TOKEN
+      - HEROKU_APP_NAME
+
+
+
