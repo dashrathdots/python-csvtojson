@@ -89,6 +89,22 @@ python manage.py test
     - Add new secret (https://github.com/dashrathdots/python-csvtojson/settings/secrets/actions/new)
       - HEROKU_API_TOKEN
       - HEROKU_APP_NAME
+  - Web access from here (https://python-csvtojson.herokuapp.com/)
 
-
+## CI/CD work flow
+  - Set up job
+    - Ii will setup the job to build the project
+  - Run actions/checkout@v2
+    - This action checks-out your repository under $GITHUB_WORKSPACE , so your workflow can access it.
+  - Run fetch --prune --unshallow
+    - It will convert the shallow clone to the regular one.
+  - Run Install Dependencies
+    - It will install all the dependencies
+  - Run Tests
+    - It will run all the test cases which is created into the app.
+  - Deploy to Heroku
+    - If test case status will success
+      - This action will deploy project into the Heroku
+  - Post action actions/checkout@v2
+  - Complete job
 
